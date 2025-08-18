@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiVe Consultoria | Arquitetura de Crescimento para Negócios</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --azul-petroleo: #06192a;
+            --verde-vibrante: #00e800;
+            --cinza-claro: #f4f4f4;
+            --card-bg: #0A243D;
+            --border-color: rgba(0, 232, 0, 0.2);
+            --font-primaria: 'Poppins', sans-serif;
+            --font-secundaria: 'Merriweather', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-primaria);
+            background-color: var(--azul-petroleo);
+            color: var(--cinza-claro);
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-attachment: fixed; /* Adicionado para fixar o fundo */
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--card-bg);
+            border-radius: 2px;
+        }
+
+        .timeline-item .timeline-icon {
+            background-color: var(--verde-vibrante);
+            color: var(--azul-petroleo);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-opacity-80 backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Logo Adicionado -->
+                    <img src="https://raw.githubusercontent.com/Clebito2/Consultorias/6ba4a7c40cd9c2380cd1c4a446adf011d91ca722/Logo%20live%20oficial-21.png" alt="Logo LiVe Consultoria" class="h-12">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#problema" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">O Desafio</a>
+                        <a href="#framework" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nossa Metodologia</a>
+                        <a href="#diferenciais" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Diferenciais</a>
+                        <!-- Link do Botão Atualizado -->
+                        <a href="https://calendar.app.google/oxbTByspv3kRXi9S9" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-600 transition-colors">Agendar Diagnóstico</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-24 md:py-32 text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-section is-visible">
+                <h2 class="text-base font-semibold text-green-400 tracking-wider uppercase">Consultoria Estratégica para Negócios</h2>
+                <p class="mt-2 text-4xl font-extrabold text-white sm:text-5xl md:text-6xl" style="font-family: var(--font-secundaria);">
+                    Da Complexidade à Clareza. Do Potencial ao Crescimento.
+                </p>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-300">
+                    Nós transformamos operações caóticas e processos manuais em sistemas eficientes e automatizados, construindo a arquitetura que seu negócio precisa para crescer de forma sustentável.
+                </p>
+                <div class="mt-8">
+                    <a href="#framework" class="inline-block bg-green-500 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-green-600 transition-colors">Conheça o Framework</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Problema -->
+        <section id="problema" class="py-20 bg-black bg-opacity-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-section">
+                    <h2 class="text-3xl font-extrabold text-white">Sua operação se identifica com algum destes desafios?</h2>
+                    <p class="mt-4 text-lg text-gray-400">Muitos negócios promissores ficam estagnados por não resolverem suas fundações operacionais.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg fade-in-section">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                            <i data-lucide="puzzle"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-white">Processos Manuais e Desconectados</h3>
+                        <p class="mt-2 text-base text-gray-400">Dependência de planilhas, documentos Word e e-mails para "costurar" informações, gerando retrabalho e erros.</p>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg fade-in-section" style="transition-delay: 100ms;">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                            <i data-lucide="eye-off"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-white">Falta de Visibilidade Gerencial</h3>
+                        <p class="mt-2 text-base text-gray-400">Dificuldade em saber o status real das operações, rastrear ativos ou medir a performance das equipes.</p>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg fade-in-section" style="transition-delay: 200ms;">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                             <i data-lucide="file-warning"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-white">Riscos de Conformidade</h3>
+                        <p class="mt-2 text-base text-gray-400">Documentação obsoleta e processos não padronizados que criam vulnerabilidades em auditorias e fiscalizações.</p>
+                    </div>
+                    <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg fade-in-section" style="transition-delay: 300ms;">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                            <i data-lucide="trending-down"></i>
+                        </div>
+                        <h3 class="mt-5 text-lg font-medium text-white">Estagnação do Crescimento</h3>
+                        <p class="mt-2 text-base text-gray-400">A ineficiência operacional impede a escalabilidade do negócio e a exploração de novas oportunidades de receita.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Framework -->
+        <section id="framework" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-section">
+                    <h2 class="text-base font-semibold text-green-400 tracking-wider uppercase">Nossa Metodologia</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-white sm:text-4xl" style="font-family: var(--font-secundaria);">
+                        O Framework de Arquitetura de Crescimento LiVe
+                    </p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
+                        Uma jornada estruturada em 4 fases para diagnosticar, desenhar, implementar e sustentar a transformação do seu negócio.
+                    </p>
+                </div>
+
+                <div class="mt-16 relative timeline fade-in-section">
+                    <!-- Fase 1 -->
+                    <div class="mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full timeline-icon">
+                            <h3 class="mx-auto font-bold text-lg">1</h3>
+                        </div>
+                        <div class="order-1 bg-gray-900 bg-opacity-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-3 font-bold text-white text-xl">Fase 1: Raio-X Estratégico</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-300">Mapeamos seu ecossistema de negócios, processos "AS-IS", sistemas e riscos para criar um diagnóstico preciso e identificar as alavancas de crescimento.</p>
+                        </div>
+                    </div>
+                    <!-- Fase 2 -->
+                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full timeline-item">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full timeline-icon">
+                            <h3 class="mx-auto font-bold text-lg">2</h3>
+                        </div>
+                        <div class="order-1 bg-gray-900 bg-opacity-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-3 font-bold text-white text-xl">Fase 2: Blueprint da Transformação</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-300">Desenhamos a "versão futura" da sua operação com processos "TO-BE" otimizados, novos organogramas e um plano de ação tático interativo em HTML.</p>
+                        </div>
+                    </div>
+                    <!-- Fase 3 -->
+                    <div class="mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full timeline-icon">
+                            <h3 class="mx-auto font-bold text-lg">3</h3>
+                        </div>
+                        <div class="order-1 bg-gray-900 bg-opacity-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-3 font-bold text-white text-xl">Fase 3: Implementação Tática</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-300">Executamos o plano construindo ferramentas de gestão, dashboards, manuais visuais e apoiando na configuração dos sistemas para materializar a mudança.</p>
+                        </div>
+                    </div>
+                    <!-- Fase 4 -->
+                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full timeline-item">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full timeline-icon">
+                             <h3 class="mx-auto font-bold text-lg">4</h3>
+                        </div>
+                        <div class="order-1 bg-gray-900 bg-opacity-50 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                            <h3 class="mb-3 font-bold text-white text-xl">Fase 4: Gestão da Mudança e Evolução</h3>
+                            <p class="text-sm leading-snug tracking-wide text-gray-300">Capacitamos sua equipe com treinamentos e materiais didáticos, garantindo a adoção das novas práticas e uma cultura de melhoria contínua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Diferenciais -->
+        <section id="diferenciais" class="py-20 bg-black bg-opacity-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-section">
+                    <h2 class="text-3xl font-extrabold text-white">Mais que uma consultoria, uma parceria na construção.</h2>
+                    <p class="mt-4 text-lg text-gray-400">Nossa abordagem vai além dos relatórios. Nós criamos as ferramentas para a sua transformação.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="p-6 rounded-lg fade-in-section">
+                        <i data-lucide="layout-template" class="w-10 h-10 text-green-400"></i>
+                        <h3 class="mt-5 text-xl font-bold text-white">Entregáveis de Alto Impacto</h3>
+                        <p class="mt-2 text-base text-gray-300">Substituímos os PDFs estáticos por dashboards, planos e manuais interativos em HTML, que são verdadeiras ferramentas de gestão para o seu dia a dia.</p>
+                    </div>
+                    <div class="p-6 rounded-lg fade-in-section" style="transition-delay: 100ms;">
+                         <i data-lucide="settings-2" class="w-10 h-10 text-green-400"></i>
+                        <h3 class="mt-5 text-xl font-bold text-white">Foco em Automação e Sistemas</h3>
+                        <p class="mt-2 text-base text-gray-300">Somos especialistas em identificar e apoiar a implementação das ferramentas certas (CRMs, ERPs) para eliminar o trabalho manual e automatizar seus processos.</p>
+                    </div>
+                     <div class="p-6 rounded-lg fade-in-section" style="transition-delay: 200ms;">
+                         <i data-lucide="users-2" class="w-10 h-10 text-green-400"></i>
+                        <h3 class="mt-5 text-xl font-bold text-white">Abordagem Holística e Integrada</h3>
+                        <p class="mt-2 text-base text-gray-300">Analisamos seu negócio de forma 360°, conectando Estratégia, Processos, Pessoas e Tecnologia para garantir que todas as áreas evoluam em sinergia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Modelos de Parceria -->
+        <section id="modelos" class="py-20">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center fade-in-section">
+                    <h2 class="text-3xl font-extrabold text-white">Modelos de Parceria Flexíveis</h2>
+                    <p class="mt-4 text-lg text-gray-400">Soluções modulares que se adaptam à sua necessidade e ao seu momento.</p>
+                </div>
+                <div class="mt-12 grid gap-8 md:grid-cols-3">
+                    <div class="bg-gray-900 bg-opacity-50 border border-gray-700 rounded-lg p-8 fade-in-section">
+                        <h3 class="text-xl font-bold text-white">Pacote Raio-X Estratégico</h3>
+                        <p class="mt-4 text-gray-300">Ideal para quem precisa de clareza. Entregamos um diagnóstico completo e um roadmap de ações prioritárias.</p>
+                        <ul class="mt-6 space-y-4">
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Análise do Ecossistema</span></li>
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Mapeamento de Processos "AS-IS"</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-900 bg-opacity-50 border-2 border-green-500 rounded-lg p-8 fade-in-section" style="transition-delay: 100ms;">
+                        <h3 class="text-xl font-bold text-green-400">Pacote de Reestruturação</h3>
+                        <p class="mt-4 text-gray-300">Focado em redesenhar uma área específica (Vendas, Operações) com novos processos e plano de ação.</p>
+                         <ul class="mt-6 space-y-4">
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Tudo do pacote Raio-X</span></li>
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Desenho de Processos "TO-BE"</span></li>
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Plano de Ação Tático Interativo</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-900 bg-opacity-50 border border-gray-700 rounded-lg p-8 fade-in-section" style="transition-delay: 200ms;">
+                        <h3 class="text-xl font-bold text-white">Projeto de Transformação Completa</h3>
+                        <p class="mt-4 text-gray-300">A parceria completa, do diagnóstico à implementação, com construção de ferramentas e treinamento da equipe.</p>
+                         <ul class="mt-6 space-y-4">
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Tudo da Reestruturação</span></li>
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Implementação e Ferramentas</span></li>
+                           <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 text-green-400 mr-2 mt-1 flex-shrink-0"></i><span>Treinamento e Acompanhamento</span></li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contato" class="py-20">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 fade-in-section">
+                <h2 class="text-3xl font-extrabold text-white">Pronto para construir o futuro do seu negócio?</h2>
+                <p class="mt-4 text-lg text-gray-300">
+                    Vamos conversar. O primeiro passo é uma sessão de diagnóstico gratuita, onde podemos entender seus desafios e mostrar como nossa metodologia pode ajudar.
+                </p>
+                <div class="mt-8">
+                    <!-- Link do Botão Atualizado -->
+                    <a href="https://calendar.app.google/oxbTByspv3kRXi9S9" target="_blank" class="inline-block bg-green-500 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-green-600 transition-colors">
+                        <i data-lucide="calendar" class="inline-block -mt-1 mr-2"></i>Agendar Sessão de Diagnóstico
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black bg-opacity-30 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
+            <p>&copy; 2025 LiVe Consultoria. Todos os direitos reservados.</p>
+            <p class="mt-1">Desenvolvido por Cléber Donato - Consultoria de Processos e Negócios</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
