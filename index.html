@@ -51,7 +51,7 @@
             font-family: var(--font-titulos-serif);
         }
         .numero-fase {
-            font-family: var(--font-titulos-serif); /* Fonte dos números alterada */
+            font-family: var(--font-titulos-serif);
             font-size: 3rem;
             font-weight: 700;
             line-height: 1;
@@ -67,9 +67,6 @@
             transform: translateY(0);
         }
         
-        /* Linha vertical da timeline removida */
-        /* .timeline::before { ... } */
-
         .timeline-item .timeline-icon {
             background-color: var(--dourado);
             color: var(--azul-petroleo);
@@ -111,18 +108,35 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 2.5rem; /* 40px */
+            width: 2.5rem;
             height: 2px;
             background-color: var(--dourado);
             opacity: 0.5;
         }
 
         .timeline-item-right .timeline-content-container::before {
-            left: -2.5rem; /* Conecta à esquerda */
+            left: -2.5rem;
         }
 
         .timeline-item-left .timeline-content-container::before {
-            right: -2.5rem; /* Conecta à direita */
+            right: -2.5rem;
+        }
+
+        /* Sublinhado Dourado para Títulos */
+        .titulo-sublinhado-dourado {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        .titulo-sublinhado-dourado::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, var(--dourado-gradiente-start), var(--dourado-gradiente-mid), var(--dourado-gradiente-end));
         }
 
 
@@ -130,7 +144,7 @@
             .titulo-hero { font-size: 4rem; }
             .titulo-secao { font-size: 3.5rem; }
             .timeline-content-container::before {
-                display: none; /* Esconde a linha em telas menores */
+                display: none;
             }
         }
 
@@ -173,7 +187,6 @@
         <section class="py-24 md:py-32 text-center">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-section is-visible">
                 <h2 class="text-base font-semibold text-yellow-400 tracking-wider uppercase">Consultoria Estratégica para Negócios</h2>
-                <!-- Título Atualizado -->
                 <p class="mt-2 titulo-hero text-white">
                     Instauração da Clareza
                 </p>
@@ -181,7 +194,7 @@
                     Edificando Negócios para o Crescimento Sustentável.
                 </p>
                 <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-300">
-                    Nós transformamos operações caóticas e processos manuais em sistemas eficientes e automatizados, construindo a arquitetura que seu negócio precisa para crescer.
+                    Nós transformamos operações complicadas e processos manuais em sistemas eficientes e automatizados, construindo a arquitetura que seu negócio precisa para crescer.
                 </p>
                 <div class="mt-8">
                     <a href="#framework" class="inline-block bg-yellow-600 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-yellow-700 transition-colors">Conheça o Framework</a>
@@ -325,21 +338,21 @@
         <section id="diferenciais" class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center fade-in-section">
-                    <h2 class="titulo-secao text-white">Nossos Diferenciais</h2>
+                    <h2 class="titulo-secao text-white titulo-sublinhado-dourado">Nossos Diferenciais</h2>
                     <p class="mt-4 text-xl text-gray-400" style="font-family: var(--font-titulos-serif);">Mais que uma consultoria, uma parceria na construção.</p>
                 </div>
                 <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="p-6 rounded-lg fade-in-section">
+                    <div class="p-6 rounded-lg fade-in-section card-fosco">
                         <i data-lucide="layout-template" class="w-10 h-10 text-yellow-400"></i>
                         <h3 class="mt-5 text-xl font-bold text-white">Entregáveis de Alto Impacto</h3>
                         <p class="mt-2 text-lg text-gray-300">Substituímos os PDFs estáticos por dashboards, planos e manuais interativos em HTML, que são verdadeiras ferramentas de gestão para o seu dia a dia.</p>
                     </div>
-                    <div class="p-6 rounded-lg fade-in-section" style="transition-delay: 100ms;">
+                    <div class="p-6 rounded-lg fade-in-section card-fosco" style="transition-delay: 100ms;">
                          <i data-lucide="settings-2" class="w-10 h-10 text-yellow-400"></i>
                         <h3 class="mt-5 text-xl font-bold text-white">Foco em Automação e Sistemas</h3>
                         <p class="mt-2 text-lg text-gray-300">Somos especialistas em identificar e apoiar a implementação das ferramentas certas (CRMs, ERPs) para eliminar o trabalho manual e automatizar seus processos.</p>
                     </div>
-                     <div class="p-6 rounded-lg fade-in-section" style="transition-delay: 200ms;">
+                     <div class="p-6 rounded-lg fade-in-section card-fosco" style="transition-delay: 200ms;">
                          <i data-lucide="users-2" class="w-10 h-10 text-yellow-400"></i>
                         <h3 class="mt-5 text-xl font-bold text-white">Abordagem Holística e Integrada</h3>
                         <p class="mt-2 text-lg text-gray-300">Analisamos seu negócio de forma 360°, conectando Estratégia, Processos, Pessoas e Tecnologia para garantir que todas as áreas evoluam em sinergia.</p>
@@ -389,10 +402,12 @@
         <!-- CTA Section -->
         <section id="contato" class="py-20">
             <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 fade-in-section">
-                <h2 class="titulo-secao">Vamos Conversar?</h2>
-                <p class="mt-4 text-xl text-gray-300">
-                    O primeiro passo é uma sessão de diagnóstico gratuita, onde podemos entender seus desafios e mostrar como nossa metodologia pode ajudar a edificar o futuro do seu negócio.
-                </p>
+                <h2 class="titulo-secao titulo-sublinhado-dourado">Vamos Conversar?</h2>
+                 <div class="card-fosco rounded-lg p-6 inline-block mt-4">
+                    <p class="text-xl text-gray-300">
+                        O primeiro passo é uma sessão de diagnóstico gratuita, onde podemos entender seus desafios e mostrar como nossa metodologia pode ajudar a edificar o futuro do seu negócio.
+                    </p>
+                </div>
                 <div class="mt-8">
                     <a href="https://calendar.app.google/oxbTByspv3kRXi9S9" target="_blank" class="inline-block bg-yellow-600 text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-yellow-700 transition-colors">
                         <i data-lucide="calendar" class="inline-block -mt-1 mr-2"></i>Agendar Sessão de Diagnóstico
