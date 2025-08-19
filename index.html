@@ -51,8 +51,9 @@
             font-family: var(--font-titulos-serif);
         }
         .numero-fase {
-            font-family: var(--font-titulos-cursiva);
+            font-family: var(--font-titulos-serif); /* Fonte dos números alterada */
             font-size: 3rem;
+            font-weight: 700;
             line-height: 1;
         }
 
@@ -66,15 +67,8 @@
             transform: translateY(0);
         }
         
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 18px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--dourado), transparent);
-        }
+        /* Linha vertical da timeline removida */
+        /* .timeline::before { ... } */
 
         .timeline-item .timeline-icon {
             background-color: var(--dourado);
@@ -107,9 +101,37 @@
             height: auto;
         }
 
+        /* Linha de conexão para a timeline */
+        .timeline-content-container {
+            position: relative;
+        }
+
+        .timeline-content-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.5rem; /* 40px */
+            height: 2px;
+            background-color: var(--dourado);
+            opacity: 0.5;
+        }
+
+        .timeline-item-right .timeline-content-container::before {
+            left: -2.5rem; /* Conecta à esquerda */
+        }
+
+        .timeline-item-left .timeline-content-container::before {
+            right: -2.5rem; /* Conecta à direita */
+        }
+
+
         @media (max-width: 768px) {
             .titulo-hero { font-size: 4rem; }
             .titulo-secao { font-size: 3.5rem; }
+            .timeline-content-container::before {
+                display: none; /* Esconde a linha em telas menores */
+            }
         }
 
     </style>
@@ -242,45 +264,45 @@
 
                 <div class="mt-16 relative timeline fade-in-section">
                     <!-- Fase 1 -->
-                    <div class="mb-8 flex justify-between items-center w-full timeline-item">
+                    <div class="mb-8 flex justify-between items-center w-full timeline-item timeline-item-right">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-10 h-10 rounded-full timeline-icon">
                             <p class="mx-auto numero-fase">1</p>
                         </div>
-                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4 timeline-content-container">
                             <h3 class="mb-3 font-bold text-white text-xl">Fase 1: Raio-X Estratégico</h3>
                             <p class="text-lg leading-relaxed tracking-wide text-gray-300">Mapeamos seu ecossistema de negócios, processos "AS-IS", sistemas e riscos para criar um diagnóstico preciso e identificar as alavancas de crescimento.</p>
                         </div>
                     </div>
                     <!-- Fase 2 -->
-                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full timeline-item">
+                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full timeline-item timeline-item-left">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-10 h-10 rounded-full timeline-icon">
                             <p class="mx-auto numero-fase">2</p>
                         </div>
-                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4 timeline-content-container">
                             <h3 class="mb-3 font-bold text-white text-xl">Fase 2: Blueprint da Transformação</h3>
                             <p class="text-lg leading-relaxed tracking-wide text-gray-300">Desenhamos a "versão futura" da sua operação com processos "TO-BE" otimizados, novos organogramas e um plano de ação tático interativo em HTML.</p>
                         </div>
                     </div>
                     <!-- Fase 3 -->
-                    <div class="mb-8 flex justify-between items-center w-full timeline-item">
+                    <div class="mb-8 flex justify-between items-center w-full timeline-item timeline-item-right">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-10 h-10 rounded-full timeline-icon">
                             <p class="mx-auto numero-fase">3</p>
                         </div>
-                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4 timeline-content-container">
                             <h3 class="mb-3 font-bold text-white text-xl">Fase 3: Implementação Tática</h3>
                             <p class="text-lg leading-relaxed tracking-wide text-gray-300">Executamos o plano construindo ferramentas de gestão, dashboards, manuais visuais e apoiando na configuração dos sistemas para materializar a mudança.</p>
                         </div>
                     </div>
                     <!-- Fase 4 -->
-                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full timeline-item">
+                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full timeline-item timeline-item-left">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-20 flex items-center order-1 shadow-xl w-10 h-10 rounded-full timeline-icon">
                              <p class="mx-auto numero-fase">4</p>
                         </div>
-                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div class="order-1 card-fosco rounded-lg shadow-xl w-5/12 px-6 py-4 timeline-content-container">
                             <h3 class="mb-3 font-bold text-white text-xl">Fase 4: Gestão da Mudança e Evolução</h3>
                             <p class="text-lg leading-relaxed tracking-wide text-gray-300">Capacitamos sua equipe com treinamentos e materiais didáticos, garantindo a adoção das novas práticas e uma cultura de melhoria contínua.</p>
                         </div>
